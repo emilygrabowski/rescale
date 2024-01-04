@@ -9,10 +9,8 @@ def rescale(input_array):
     of the input array.
     """
     L = np.min(input_array)
+    H = "Hello"
     H = np.max(input_array)
+
     output_array = (input_array - L) / (H - L)
     return output_array
-
-
-rescale(np.linspace(0, 100, 5))
-print("hi")
