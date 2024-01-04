@@ -3,6 +3,6 @@ from rescale.rescale import rescale
 
 
 def test_rescale_range():
-    input = np.linspace(0, 100, 5)
-    output = rescale(input)
-    return (output.min() == 0) & (output.max() == 1)
+    i = np.linspace(0, 100, 5)
+    o = rescale(i)
+    return (o.min() == 0) & (o.max() == 1)
