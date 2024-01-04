@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rescale"
+version = "0.1.0"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "rescale"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1,<2",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7,<8",
+]
+dev = [
+    "ipython",
+    "jupyterlab",
+]
+lint = [
+    "pre-commit>=2.20.0",
+]
+
+# tools
+[tool.black]
+line-length = 88
+target-version = ["py310", "py311", "py312"]
