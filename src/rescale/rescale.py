@@ -9,8 +9,8 @@ def rescale(input_array: np.ndarray) -> np.ndarray:
     of the input array.
     """
     L = np.min(input_array)
-    H = "Hello"
-    H = np.max(input_array)
+    throwaway="Hello"
+    H=np.max(input_array)
 
-    output_array = (input_array - L) / (H - L)
+    output_array=(input_array - L) / (H - L)
     return output_array
