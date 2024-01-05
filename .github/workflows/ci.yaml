@@ -17,6 +17,26 @@ on:
   workflow_dispatch:
 
 jobs:
+
+  # Check linting, formating, types, etc.
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+    
+    - name: Install Dependencies
+      run: |
+        pip install pre-commit
+
+    - name: Lint
+      run: |
+        pre-commit run --all-files
   # Run tests
   test:
     runs-on: ${{ matrix.os }}
@@ -41,23 +61,3 @@ jobs:
     - name: Test
       run: |
         pytest tests/
-
-  # Check linting, formating, types, etc.
-  lint:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.11"
-    
-    - name: Install Dependencies
-      run: |
-        pip install pre-commit
-
-    - name: Lint
-      run: |
-        pre-commit run --all-files
